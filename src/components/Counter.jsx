@@ -3,14 +3,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { increment, decrement, incrementByAmount } from '../features/counterSlice'
 
 export default function Counter(){
-    const count = useSelector((state) => state.value)
+    const count = useSelector((state) => state.counter.value)
     const dispatch = useDispatch()
     const [ input, setInput ] = useState(0)
 
     const byAmountSubmit = (e) => {
         e.preventDefault()
         dispatch(incrementByAmount(Number(input)))
-        setInput(0)
     }
     
     return (
